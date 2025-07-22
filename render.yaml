@@ -1,0 +1,6 @@
+services:
+- type: worker
+  name: crypto-news-bot
+  env: python
+  buildCommand: ""
+  startCommand: bash start.sh
