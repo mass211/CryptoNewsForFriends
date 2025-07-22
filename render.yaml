@@ -1,6 +1,12 @@
 services:
-- type: worker
-  name: crypto-news-bot
-  env: python
-  buildCommand: ""
-  startCommand: bash start.sh
+  - type: web
+    name: crypto-news-bot
+    runtime: python
+    buildCommand: ""
+    startCommand: python main.py
+    plan: free
+    envVars:
+      - key: TOKEN
+        value: 7853715186:AAEQ0UoMHrQFUu3owEXvctUTOxBPS0mBMwI
+      - key: CHANNEL_HANDLE
+        value: '@CryptoNewsForFriends'

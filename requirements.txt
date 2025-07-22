@@ -1,6 +1,7 @@
-requests
+Flask
+python-telegram-bot==13.15
 feedparser
+requests
 beautifulsoup4
 langdetect
-python-telegram-bot==13.15
-flask
+
