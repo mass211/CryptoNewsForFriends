@@ -5,6 +5,28 @@ import re
 from bs4 import BeautifulSoup
 from langdetect import detect
 from typing import Optional, List, Dict, Set
+from flask import Flask
+import threading
+
+app = Flask(__name__)
+
+def job():
+    while True:
+        try:
+            # اینجا تابع اصلی که کار خبرها رو انجام میده صدا زده میشه
+            fetch_and_send_all()
+        except Exception as e:
+            print(f"خطا در اجرای وظیفه: {e}")
+        time.sleep(300)  # هر ۵ دقیقه اجرا شود
+
+@app.route("/")
+def home():
+    return "ربات اخبار کریپتو فعال است."
+
+if __name__ == "__main__":
+    # اجرای job در یک Thread جداگانه تا وب سرور مسدود نشود
+    threading.Thread(target=job, daemon=True).start()
+    app.run(host="0.0.0.0", port=5000)
 
 TOKEN = '7853715186:AAEQ0UoMHrQFUu3owEXvctUTOxBPS0mBMwI'
 CHANNEL_HANDLE = '@CryptoNewsForFriends'

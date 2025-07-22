@@ -3,7 +3,7 @@ modules = ["python-3.11"]
 
 [nix]
 channel = "stable-24_05"
-packages = ["python311Packages.beautifulsoup4", "python311Packages.feedparser", "python311Packages.python-telegram-bot", "python312Packages.googletrans", "python312Packages.langdetect", "python312Packages.requests"]
+packages = ["python311Packages.beautifulsoup4", "python311Packages.feedparser", "python311Packages.python-telegram-bot", "python312Packages.googletrans", "python312Packages.langdetect", "python312Packages.requests", "python312Packages.flask"]
 
 [unitTest]
 language = "python3"
